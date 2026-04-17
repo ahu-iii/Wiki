@@ -1,0 +1,79 @@
+/* ===========================
+   Wiki Vault Custom Styles
+   =========================== */
+
+/* --- Custom Callouts --- */
+
+/* Contradiction: red/warm — two sources disagree */
+.callout[data-callout="contradiction"] {
+  --callout-color: 209, 105, 105;
+  --callout-icon: lucide-alert-triangle;
+}
+
+/* Gap: yellow — evidence is thin or missing */
+.callout[data-callout="gap"] {
+  --callout-color: 220, 186, 100;
+  --callout-icon: lucide-help-circle;
+}
+
+/* Key Insight: blue — standout finding */
+.callout[data-callout="key-insight"] {
+  --callout-color: 79, 193, 255;
+  --callout-icon: lucide-lightbulb;
+}
+
+/* Stale: gray — information may be outdated */
+.callout[data-callout="stale"] {
+  --callout-color: 128, 128, 128;
+  --callout-icon: lucide-clock;
+}
+
+/* --- Folder Colors in File Explorer --- */
+
+/* Dim the raw sources folder */
+.nav-folder-title[data-path="raw"] {
+  opacity: 0.6;
+}
+
+/* Color-code wiki subfolders */
+.nav-folder-title[data-path^="wiki/sources"] {
+  color: #ce9178;
+}
+
+.nav-folder-title[data-path^="wiki/entities"] {
+  color: #c586c0;
+}
+
+.nav-folder-title[data-path^="wiki/concepts"] {
+  color: #dcdcaa;
+}
+
+.nav-folder-title[data-path^="wiki/topics"] {
+  color: #4fc1ff;
+}
+
+.nav-folder-title[data-path^="wiki/comparisons"] {
+  color: #d16969;
+}
+
+.nav-folder-title[data-path^="wiki/questions"] {
+  color: #6a9955;
+}
+
+.nav-folder-title[data-path^="wiki/synthesis"] {
+  color: #569cd6;
+}
+
+.nav-folder-title[data-path^="wiki/meta"] {
+  color: #808080;
+}
+
+/* Templates folder dimmed */
+.nav-folder-title[data-path="_templates"] {
+  opacity: 0.7;
+}
+
+/* Attachments folder dimmed */
+.nav-folder-title[data-path="_attachments"] {
+  opacity: 0.7;
+}

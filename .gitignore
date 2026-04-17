@@ -1,0 +1,20 @@
+# Obsidian workspace (changes constantly, not meaningful)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# Plugin caches
+.smart-connections/
+.obsidian-git-data
+
+# System
+.trash/
+.DS_Store
+Thumbs.db
+
+# Dependencies (shouldn't exist, but just in case)
+node_modules/
+
+# Database files
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
