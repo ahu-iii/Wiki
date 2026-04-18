@@ -6,5 +6,9 @@
   "minimal-style@@embed-hide-title": true,
   "minimal-style@@link-unresolved-opacity": 0.3,
   "minimal-style@@link-color@@light": "#42617E",
-  "minimal-style@@link-color-hover@@light": "#17469E"
+  "minimal-style@@link-color-hover@@light": "#17469E",
+  "minimal-style@@h1-size": "1.5em",
+  "minimal-style@@h2-size": "1.3em",
+  "minimal-style@@h1-l": true,
+  "minimal-style@@h2-l": true
 }
