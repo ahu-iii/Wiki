@@ -1,7 +1,5 @@
 {
-  "enabledCssSnippets": [
-    "wiki-vault"
-  ],
+  "enabledCssSnippets": [],
   "cssTheme": "Minimal",
   "theme": "moonstone",
   "accentColor": "#658495"
