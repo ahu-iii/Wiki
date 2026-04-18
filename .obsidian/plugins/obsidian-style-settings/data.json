@@ -1,5 +1,10 @@
 {
   "minimal-advanced@@cursor": "default",
   "minimal-advanced@@hide-settings-desc": false,
-  "minimal-advanced@@hide-markdown": false
+  "minimal-advanced@@hide-markdown": false,
+  "minimal-style@@embed-strict": true,
+  "minimal-style@@embed-hide-title": true,
+  "minimal-style@@link-unresolved-opacity": 0.3,
+  "minimal-style@@link-color@@light": "#42617E",
+  "minimal-style@@link-color-hover@@light": "#17469E"
 }
