@@ -30,3 +30,8 @@ Synthesized answer with [[wikilink]] citations.
 ## Remaining Uncertainty
 
 What the wiki still does not know about this question.
+
+## Sources
+
+- [[Source 1]]
+- [[Source 2]]

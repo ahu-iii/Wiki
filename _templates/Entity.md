@@ -36,3 +36,8 @@ sources: []
 
 - [[Related Page 1]]
 - [[Related Page 2]]
+
+## Sources
+
+- [[Source 1]]
+- [[Source 2]]

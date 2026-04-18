@@ -38,3 +38,8 @@ What follows if this thesis holds.
 ## Open Questions
 
 What would strengthen or weaken this synthesis.
+
+## Sources
+
+- [[Source 1]]
+- [[Source 2]]

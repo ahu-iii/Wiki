@@ -37,11 +37,11 @@ Where and how this concept is used in practice.
 - Part of: [[Topic Page]]
 - Contrasts with: [[Alternative Concept]]
 
-## Evidence and Sources
-
-- [[Source 1]]: what it says about this concept
-- [[Source 2]]: supporting or contrasting view
-
 ## Gaps and Open Questions
 
 > [!gap] What is still unclear, debated, or under-researched.
+
+## Sources
+
+- [[Source 1]] — what it says about this concept
+- [[Source 2]] — supporting or contrasting view
