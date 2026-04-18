@@ -48,7 +48,25 @@
       "Bash(gh repo *)",
       "WebFetch(domain:raw.githubusercontent.com)",
       "mcp__plugin_claude-mem_mcp-search__get_observations",
-      "PowerShell($PROFILE)"
+      "PowerShell($PROFILE)",
+      "Bash(curl -sf http://localhost:37777/health)",
+      "Bash(echo \"---exit:$?\")",
+      "Read(//c/Users/Jose/.claude-mem/**)",
+      "Bash(netstat -ano)",
+      "Bash(taskkill /F /PID 25132)",
+      "Bash(disown)",
+      "Bash(curl -sf --max-time 3 http://localhost:37777/health)",
+      "Bash(cmd //c \"taskkill /F /PID 25132\")",
+      "Bash(cmd //c \"tasklist /FI \\\\\"PID eq 25132\\\\\"\")",
+      "Bash(cmd //c \"tasklist /FI \\\\\"IMAGENAME eq node.exe\\\\\"\")",
+      "Bash(cmd //c \"tasklist /FI \\\\\"IMAGENAME eq bun.exe\\\\\"\")",
+      "Bash(powershell -Command \"Get-Process -Id 25132 -ErrorAction SilentlyContinue | Select-Object Id,ProcessName,StartTime\")",
+      "Bash(powershell -Command \"Get-Process node,bun -ErrorAction SilentlyContinue | Select-Object Id,ProcessName,StartTime | Format-Table -AutoSize\")",
+      "Bash(powershell -Command 'Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -and \\($_.CommandLine -match '\\\\''claude-mem'\\\\'' -or $_.CommandLine -match '\\\\''worker-service'\\\\'' -or $_.CommandLine -match '\\\\''mcp-server\\\\.cjs'\\\\''\\) } | Select-Object ProcessId,Name,@{N='\\\\''Cmd'\\\\'';E={\\($_.CommandLine -replace '\\\\''\\\\s+'\\\\'','\\\\'' '\\\\''\\).Substring\\(0,[Math]::Min\\(120,$_.CommandLine.Length\\)\\)}} | Format-Table -AutoSize -Wrap')",
+      "Bash(powershell -Command \"Stop-Process -Id 31092,14992,33204,16820,26256,13184 -Force -ErrorAction SilentlyContinue; Start-Sleep -Seconds 3; Write-Host '---after kill:'; Get-Process -Id 31092,14992,33204,16820,26256,13184 -ErrorAction SilentlyContinue | Select-Object Id,ProcessName\")",
+      "Bash(powershell -Command \"Get-Process -Id 25132,14184,19652 -ErrorAction SilentlyContinue | Select-Object Id,ProcessName,StartTime,Path | Format-Table -AutoSize\")",
+      "Bash(powershell -Command 'Get-CimInstance Win32_Process -Filter '\\\\''ProcessId=25132 OR ProcessId=14184 OR ProcessId=19652'\\\\'' | Select-Object ProcessId,Name,@{N='\\\\''Cmd'\\\\'';E={\\($_.CommandLine -replace '\\\\''\\\\s+'\\\\'','\\\\'' '\\\\''\\).Substring\\(0,[Math]::Min\\(150,$_.CommandLine.Length\\)\\)}} | Format-Table -AutoSize -Wrap')",
+      "Bash(powershell *)"
     ]
   }
 }
