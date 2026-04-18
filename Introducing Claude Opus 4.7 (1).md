@@ -1,11 +1,11 @@
 ---
-title: "Introducing Claude Opus 4.7"
-source: "https://www.anthropic.com/news/claude-opus-4-7"
+title: Introducing Claude Opus 4.7
+source: https://www.anthropic.com/news/claude-opus-4-7
 author:
 published:
 created: 2026-04-18
 tags:
-  - "article"
+  - article
 ---
 # Introducing Claude Opus 4.7
 
