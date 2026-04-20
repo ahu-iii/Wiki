@@ -68,14 +68,27 @@ Read the relevant skill file **once, at the start of the workflow**. Do not prel
 
 ## Reliability Primitives
 
-Four cheap conventions, enforced by lint. Each costs roughly one line of discipline. Together they defend against the LLM-wiki failure modes (persistent hallucination, silent drift, false authority).
+Four cheap conventions. Each costs roughly one line of discipline. Together they defend against the LLM-wiki failure modes (persistent hallucination, silent drift, false authority).
 
 1. **Inline citation.** Every non-trivial factual claim carries an inline `[[Source]]` wikilink. Common-knowledge framing is exempt; attributable facts are not.
-2. **`## Sources` footer.** Every wiki page ends with a `## Sources` section listing every source cited on that page. New pages inherit the stub from `_templates/`.
+2. **`## Sources` footer.** Every wiki page ends with a `## Sources` section listing every source cited on that page. New pages inherit the stub from `_templates/`. **Enforced by hook** — see Enforcement below.
 3. **`volatility:` frontmatter (optional).** `stable | evolving | time-sensitive`. Omit when stable. Lint surfaces `time-sensitive` >60 days and `evolving` >180 days; `stable` is ignored.
 4. **Uncertainty markers.** Unverified claims get a `(?)` suffix or `> [!gap]` callout. When new evidence replaces an old claim, use `> [!superseded by [[New Source]]]` — never silently overwrite. Genuine disagreements use `> [!contradiction]`.
 
 Skip these and the wiki silently rots.
+
+---
+
+## Enforcement (harness layer)
+
+Two hooks convert the reliability primitives from norms into mechanism. Both live in `.claude/hooks/` and are wired in `.claude/settings.local.json`.
+
+| Hook | Type | What it does |
+|---|---|---|
+| `check-wiki-sources-footer.cjs` | `PreToolUse` (Write/Edit/MultiEdit) | Blocks writes to `wiki/{sources,entities,concepts,topics,comparisons,questions,synthesis}/*.md` whose proposed final body has real prose (>200 chars) but no `## Sources` heading. Stubs and template scaffolds pass through. |
+| `lint-summary.cjs` | `Stop` | Prints a one-line session-end count to stderr: scanned pages, missing footers, dead wikilinks, stale meta files. Cheap by design — full audit stays in the `wiki-lint` skill. |
+
+Source lifecycle is tracked in `raw/manifest.yaml` (per-source `status: active|retracted|superseded|errata`). Lint joins this against citations and surfaces wiki pages that depend on non-active sources. The composite per-page "trust score" view lives in `wiki/meta/trust-report.md`, refreshed as a lint side-effect.
 
 ---
 

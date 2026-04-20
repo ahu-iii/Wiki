@@ -1,0 +1,17 @@
+# Per-source lifecycle manifest. Read by the wiki-lint skill to surface
+# wiki pages that depend on retracted, superseded, or errata-flagged sources.
+#
+# Schema (per source entry):
+#   path:           relative path under raw/ (canonical id)
+#   wiki_page:      matching wiki/sources/<Title>.md filename (without extension)
+#   status:         active | retracted | superseded | errata
+#   note:           one-line reason; required when status != active
+#   superseded_by:  raw/ path of the replacement; required when status = superseded
+#
+# Update status manually when a source is retracted or replaced. Lint will
+# then flag every wiki page whose `## Sources` footer cites this entry.
+
+sources:
+  - path: raw/papers/attention-is-all-you-need-Paper.pdf
+    wiki_page: Attention Is All You Need
+    status: active

@@ -66,7 +66,32 @@
       "Bash(powershell -Command \"Stop-Process -Id 31092,14992,33204,16820,26256,13184 -Force -ErrorAction SilentlyContinue; Start-Sleep -Seconds 3; Write-Host '---after kill:'; Get-Process -Id 31092,14992,33204,16820,26256,13184 -ErrorAction SilentlyContinue | Select-Object Id,ProcessName\")",
       "Bash(powershell -Command \"Get-Process -Id 25132,14184,19652 -ErrorAction SilentlyContinue | Select-Object Id,ProcessName,StartTime,Path | Format-Table -AutoSize\")",
       "Bash(powershell -Command 'Get-CimInstance Win32_Process -Filter '\\\\''ProcessId=25132 OR ProcessId=14184 OR ProcessId=19652'\\\\'' | Select-Object ProcessId,Name,@{N='\\\\''Cmd'\\\\'';E={\\($_.CommandLine -replace '\\\\''\\\\s+'\\\\'','\\\\'' '\\\\''\\).Substring\\(0,[Math]::Min\\(150,$_.CommandLine.Length\\)\\)}} | Format-Table -AutoSize -Wrap')",
-      "Bash(powershell *)"
+      "Bash(powershell *)",
+      "Bash(echo \"exit=$?\")",
+      "Bash(git add *)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .claude/hooks/check-wiki-sources-footer.cjs"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .claude/hooks/lint-summary.cjs"
+          }
+        ]
+      }
     ]
   }
 }
