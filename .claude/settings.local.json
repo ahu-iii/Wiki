@@ -68,7 +68,9 @@
       "Bash(powershell -Command 'Get-CimInstance Win32_Process -Filter '\\\\''ProcessId=25132 OR ProcessId=14184 OR ProcessId=19652'\\\\'' | Select-Object ProcessId,Name,@{N='\\\\''Cmd'\\\\'';E={\\($_.CommandLine -replace '\\\\''\\\\s+'\\\\'','\\\\'' '\\\\''\\).Substring\\(0,[Math]::Min\\(150,$_.CommandLine.Length\\)\\)}} | Format-Table -AutoSize -Wrap')",
       "Bash(powershell *)",
       "Bash(echo \"exit=$?\")",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(where pdftoppm *)",
+      "Bash(python -c \"import pypdf; print\\('pypdf ok'\\)\")"
     ]
   },
   "hooks": {
