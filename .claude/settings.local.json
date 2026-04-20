@@ -70,7 +70,8 @@
       "Bash(echo \"exit=$?\")",
       "Bash(git add *)",
       "Bash(where pdftoppm *)",
-      "Bash(python -c \"import pypdf; print\\('pypdf ok'\\)\")"
+      "Bash(python -c \"import pypdf; print\\('pypdf ok'\\)\")",
+      "Bash(markitdown \"C:/Users/Jose/Desktop/obsibrain-vault/wiki-vault/raw/books/Introduction to Machine Learning with Python A Guide for Data Scientists \\(Andreas C. Müller, Sarah Guido\\) \\(z-library.sk, 1lib.sk, z-lib.sk\\)-145-223.pdf\" -o \"C:/Users/Jose/Desktop/obsibrain-vault/wiki-vault/raw/books/imlp-145-223.md\")"
     ]
   },
   "hooks": {
