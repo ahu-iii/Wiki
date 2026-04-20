@@ -81,7 +81,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node .claude/hooks/check-wiki-sources-footer.cjs"
+            "command": "node \"C:/Users/Jose/Desktop/obsibrain-vault/wiki-vault/.claude/hooks/check-wiki-sources-footer.cjs\""
           }
         ]
       }
@@ -91,7 +91,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node .claude/hooks/lint-summary.cjs"
+            "command": "node \"C:/Users/Jose/Desktop/obsibrain-vault/wiki-vault/.claude/hooks/lint-summary.cjs\""
           }
         ]
       }
