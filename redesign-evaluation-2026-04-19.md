@@ -63,14 +63,14 @@ All six content templates now seed a `## Sources` section. New pages are born co
 
 ## What Stayed the Same (Deliberately)
 
-| Thing | Reason |
-|---|---|
-| Plain Markdown + wikilinks | Portability is the whole point |
-| Obsidian + Templater compatibility | No change in frontmatter schema |
-| Three-layer architecture (raw / wiki / schema) | Architecturally correct as-is |
-| Callout vocabulary | `[!contradiction]`, `[!gap]`, `[!stale]` were already right |
-| `index.md` / `log.md` / `hot.md` / `overview.md` | Proven pattern, no change needed |
-| 8–15 pages touched per ingest | Feature, not bug |
+| Thing                                            | Reason                                                      |
+| ------------------------------------------------ | ----------------------------------------------------------- |
+| Plain Markdown + wikilinks                       | Portability is the whole point                              |
+| Obsidian + Templater compatibility               | No change in frontmatter schema                             |
+| Three-layer architecture (raw / wiki / schema)   | Architecturally correct as-is                               |
+| Callout vocabulary                               | `[!contradiction]`, `[!gap]`, `[!stale]` were already right |
+| `index.md` / `log.md` / `hot.md` / `overview.md` | Proven pattern, no change needed                            |
+| 8–15 pages touched per ingest                    | Feature, not bug                                            |
 
 ---
 
