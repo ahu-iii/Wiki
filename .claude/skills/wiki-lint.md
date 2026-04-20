@@ -28,6 +28,9 @@ Run every check. Group findings by severity, not by check type.
 | `index-drift` | Pages not in `index.md`, or `index.md` entries pointing to nonexistent files | **LOW** | Sync `index.md` |
 | `unlinked-mentions` | Proper-noun mention in prose where a matching wiki page exists but no `[[wikilink]]` | **LOW** | Add wikilink |
 | `thin-pages` | `status: seed` for more than 30 days | **LOW** | Suggest sources to develop the page |
+| `stale-meta` | `hot.md` or `overview.md` `updated` > 7 days | **MEDIUM** | Refresh from recent log entries |
+| `source-status` | Wiki page cites a source whose `raw/manifest.yaml` `status` ≠ `active` | **HIGH** | Add `> [!superseded]` / `> [!stale]` callout citing the manifest reason |
+| `cascade-supersession` | Wiki page cites another wiki page that contains a `> [!superseded]` callout for a claim it relies on | **MEDIUM** | Add a `> [!stale]` note linking to the supersession source |
 
 ---
 
@@ -91,3 +94,23 @@ After the findings, include in the same report:
 - 2–3 source types that would strengthen coverage (e.g., "follow-up papers citing [[Attention Is All You Need]]")
 
 This keeps the wiki actively growing instead of just decaying gracefully.
+
+---
+
+## Trust report (side-effect)
+
+After writing the lint report, refresh `wiki/meta/trust-report.md` — a per-page composite of the four reliability signals: contradictions, supersessions, gaps, and volatility/staleness. Format:
+
+```markdown
+# Trust Report — YYYY-MM-DD
+
+| Page | Contradictions | Supersessions | Open Gaps | Volatility | Trust |
+|---|---|---|---|---|---|
+| [[Page X]] | 0 | 0 | 1 | stable | high |
+| [[Page Y]] | 1 | 0 | 0 | time-sensitive (45d) | medium |
+| [[Page Z]] | 0 | 2 | 3 | evolving (200d) | low |
+```
+
+Trust score: `high` (no signals) / `medium` (1–2 signals) / `low` (3+ signals or any unresolved contradiction). Sort the table by trust ascending so the user sees the weakest pages first. This is computed, not authored — overwrite the file each lint run.
+
+The trust report is the single composed view the user reads when asking "what's flaky in the wiki?"
