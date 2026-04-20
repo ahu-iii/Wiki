@@ -161,15 +161,15 @@ If a template evolves, existing pages don't auto-migrate. There is no `template_
 
 ## Recommended Follow-ups, Prioritized
 
-| Priority | Action | Cost | Pays off at |
-|---|---|---|---|
-| **1** | Add a `Stop` hook that runs a cheap lint summary (counts, not full report) at session end | Small JSON edit + tiny script | Immediately |
-| **2** | Add a `PreToolUse` hook on `Write` to `wiki/**` that rejects writes with no `## Sources` section | Moderate (script) | Week 2+ |
-| **3** | Add `hot.md` / `overview.md` freshness checks to the lint skill | Edit `wiki-lint.md` | Week 4+ |
-| **4** | Backfill `## Sources` footers on the existing 29 pages during the next two ingests | Inline with normal work | Month 2 |
-| **5** | When `index.md` > 2000 tokens, execute the known "domain sub-index" scaling plan | Moderate | Month 6+ |
-| **6** | Build a `wiki/meta/trust-report.md` that composes contradiction / supersession / gap / volatility signals | Moderate | Month 6+ |
-| **7** | Add `raw/manifest.yaml` with per-source status (active/retracted/superseded) + query-time check | Larger | Month 9+ |
+| Priority | Action                                                                                                    | Cost                          | Pays off at |
+| -------- | --------------------------------------------------------------------------------------------------------- | ----------------------------- | ----------- |
+| **1**    | Add a `Stop` hook that runs a cheap lint summary (counts, not full report) at session end                 | Small JSON edit + tiny script | Immediately |
+| **2**    | Add a `PreToolUse` hook on `Write` to `wiki/**` that rejects writes with no `## Sources` section          | Moderate (script)             | Week 2+     |
+| **3**    | Add `hot.md` / `overview.md` freshness checks to the lint skill                                           | Edit `wiki-lint.md`           | Week 4+     |
+| **4**    | Backfill `## Sources` footers on the existing 29 pages during the next two ingests                        | Inline with normal work       | Month 2     |
+| **5**    | When `index.md` > 2000 tokens, execute the known "domain sub-index" scaling plan                          | Moderate                      | Month 6+    |
+| **6**    | Build a `wiki/meta/trust-report.md` that composes contradiction / supersession / gap / volatility signals | Moderate                      | Month 6+    |
+| **7**    | Add `raw/manifest.yaml` with per-source status (active/retracted/superseded) + query-time check           | Larger                        | Month 9+    |
 
 Actions 1 and 2 alone would convert v2 from "disciplined by norm" to "disciplined by mechanism" — the single biggest durability lever.
 
