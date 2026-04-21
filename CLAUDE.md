@@ -11,7 +11,7 @@
 - **Created:** 2026-04-16
 - **Agent:** Claude Code
 - **Language:** English
-- **Tone:** Easy to understand, Clear
+- **Language style**: simple and easy to understand, natural and human-friendly.
 
 ---
 
