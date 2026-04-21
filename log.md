@@ -1,7 +1,7 @@
 ---
 type: meta
 title: "Wiki Log"
-updated: 2026-04-17
+updated: 2026-04-21
 ---
 
 # Wiki Log
@@ -9,6 +9,20 @@ updated: 2026-04-17
 > Chronological record of wiki operations. **New entries go at the top.**
 > Never edit past entries.
 > Format: `## [YYYY-MM-DD] operation | Title`
+
+## [2026-04-21] ingest | Introduction to Machine Learning with Python (pp. 145–223)
+- Source: `raw/books/Introduction to Machine Learning with Python A Guide for Data Scientists (Andreas C. Müller, Sarah Guido) (z-library.sk, 1lib.sk, z-lib.sk)-145-223.pdf`
+- Extracted (MinerU VLM): `raw/books/2026-04-21-intro-ml-python-pp145-223.extracted.md` + 187 figures under `_attachments/intro-ml-python-pp145-223/`
+- Summary: [[Introduction to Machine Learning with Python (Muller & Guido)]]
+- Created (26 pages):
+  - Source: [[Introduction to Machine Learning with Python (Muller & Guido)]]
+  - Topics: [[Unsupervised Learning]], [[Data Preprocessing]]
+  - Concepts: [[StandardScaler]], [[MinMaxScaler]], [[RobustScaler]], [[Normalizer]], [[Principal Component Analysis]], [[Non-Negative Matrix Factorization]], [[t-SNE]], [[k-Means Clustering]], [[Vector Quantization]], [[Agglomerative Clustering]], [[Dendrogram]], [[DBSCAN]], [[Adjusted Rand Index]], [[Silhouette Coefficient]]
+  - Entities: [[Andreas C. Müller]], [[Sarah Guido]], [[O'Reilly Media]], [[scikit-learn]], [[SciPy]], [[Labeled Faces in the Wild]], [[Breast Cancer Dataset]], [[Digits Dataset]], [[Iris Dataset]]
+- Updated: [[index.md]], [[hot.md]], [[overview.md]]
+- Backlink audit: zero plain-text mentions of the 26 new titles in pre-existing Transformer-era pages. The classical-ML and deep-learning subgraphs are fully orthogonal; no `[!contradiction]` or `[!superseded]` callouts introduced.
+- Uncertainty markers applied: `(?)` on Müller employer/education, Digits (1,797 samples), Iris (150/4/3); `[!gap]` on Guido bio, O'Reilly beyond publisher role, SciPy beyond `scipy.cluster.hierarchy`, and one per concept page for treatments absent from pp. 145–223.
+- Key insight: classical ML preprocessing obeys a single discipline — **fit on train only, transform both** — and ignoring it flips SVC accuracy on breast-cancer from 0.63 → 0.97. Clustering choice matters more than cluster count: k-Means assumes convex equal-size blobs, DBSCAN finds arbitrary shapes but needs density tuning, and evaluation metrics (ARI vs silhouette) can disagree on which is better.
 
 ## [2026-04-17] ingest | Attention Is All You Need
 - Source: `raw/papers/attention-is-all-you-need-Paper.pdf`
