@@ -72,7 +72,9 @@
       "Bash(where pdftoppm *)",
       "Bash(python -c \"import pypdf; print\\('pypdf ok'\\)\")",
       "Bash(markitdown \"C:/Users/Jose/Desktop/obsibrain-vault/wiki-vault/raw/books/Introduction to Machine Learning with Python A Guide for Data Scientists \\(Andreas C. Müller, Sarah Guido\\) \\(z-library.sk, 1lib.sk, z-lib.sk\\)-145-223.pdf\" -o \"C:/Users/Jose/Desktop/obsibrain-vault/wiki-vault/raw/books/imlp-145-223.md\")",
-      "Bash(MINERU_API_TOKEN=\"eyJ0eXBlIjoiSldUIiwiYWxnIjoiSFM1MTIifQ.eyJqdGkiOiIxMTUwMDU1MyIsInJvbCI6IlJPTEVfUkVHSVNURVIiLCJpc3MiOiJPcGVuWExhYiIsImlhdCI6MTc3NjY3MzcwOCwiY2xpZW50SWQiOiJsa3pkeDU3bnZ5MjJqa3BxOXgydyIsInBob25lIjoiIiwib3BlbklkIjpudWxsLCJ1dWlkIjoiMjE0N2FhY2QtOThjNy00MzQ4LTllNzYtNDhjYjczODM4NjcxIiwiZW1haWwiOiJkems2Mjc4NDhAZ21haWwuY29tIiwiZXhwIjoxNzg0NDQ5NzA4fQ.iyV4IwnJ1l_3zR_AqX1e7kMa8ssc-yw8ydKK7o2k4lsUFQTWEXyNkoT4I7c7w42gd0wrO9KhUqOXq0Qdxfdb6w\" python *)"
+      "Bash(MINERU_API_TOKEN=\"eyJ0eXBlIjoiSldUIiwiYWxnIjoiSFM1MTIifQ.eyJqdGkiOiIxMTUwMDU1MyIsInJvbCI6IlJPTEVfUkVHSVNURVIiLCJpc3MiOiJPcGVuWExhYiIsImlhdCI6MTc3NjY3MzcwOCwiY2xpZW50SWQiOiJsa3pkeDU3bnZ5MjJqa3BxOXgydyIsInBob25lIjoiIiwib3BlbklkIjpudWxsLCJ1dWlkIjoiMjE0N2FhY2QtOThjNy00MzQ4LTllNzYtNDhjYjczODM4NjcxIiwiZW1haWwiOiJkems2Mjc4NDhAZ21haWwuY29tIiwiZXhwIjoxNzg0NDQ5NzA4fQ.iyV4IwnJ1l_3zR_AqX1e7kMa8ssc-yw8ydKK7o2k4lsUFQTWEXyNkoT4I7c7w42gd0wrO9KhUqOXq0Qdxfdb6w\" python *)",
+      "Bash(python -c \"import httpx; print\\('httpx:', httpx.__version__\\)\")",
+      "Bash(python -c \"import requests; print\\('requests:', requests.__version__\\)\")"
     ]
   },
   "hooks": {
