@@ -46,8 +46,6 @@ Table 4-2. Encoding the workclass feature using one-hot encoding
 
 <table><tr><td>workclass</td><td>Government Employee</td><td>Private Employee</td><td>Self Employed</td><td>Self Employed Incorporated</td></tr><tr><td>Government Employee</td><td>1</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Private Employee</td><td>0</td><td>1</td><td>0</td><td>0</td></tr><tr><td>Self Employed</td><td>0</td><td>0</td><td>1</td><td>0</td></tr><tr><td>Self Employed Incorporated</td><td>0</td><td>0</td><td>0</td><td>1</td></tr></table>
 
-![image](https://cdn-mineru.openxlab.org.cn/result/2026-04-22/f47cf3e3-1ca2-40ff-bf0d-cff897946d96/d8c46f2d08c76f42abe7527fb53eb0208fded26f7beb1abaeb6a960991b2ea26.jpg)
-
 
 The one-hot encoding we use is quite similar, but not identical, to the dummy encoding used in statistics. For simplicity, we encode each category with a different binary feature. In statistics, it is com‐ mon to encode a categorical feature with $k$ different possible values into $k { - } 1$ features (the last one is represented as all zeros). This is done to simplify the analysis (more technically, this will avoid mak‐ ing the data matrix rank-deficient). 
 
@@ -134,9 +132,6 @@ data_dummies.head()
 
 We can now use the values attribute to convert the data_dummies DataFrame into a NumPy array, and then train a machine learning model on it. Be careful to separate the target variable (which is now encoded in two income columns) from the data before training a model. Including the output variable, or some derived property of the output variable, into the feature representation is a very common mistake in building supervised machine learning models. 
 
-![image](https://cdn-mineru.openxlab.org.cn/result/2026-04-22/f47cf3e3-1ca2-40ff-bf0d-cff897946d96/9f5f0b1c753447aedf9787efcd30b9d4bc6eddf97c256e6e25487bc19bfe0892.jpg)
-
-
 Be careful: column indexing in pandas includes the end of the range, so 'age':'occupation_ Transport-moving' is inclusive of occupation_ Transport-moving. This is different from slicing a NumPy array, where the end of a range is not included: for exam‐ ple, np.arange(11)[0:10] doesn’t include the entry with index 10. 
 
 In this case, we extract only the columns containing features—that is, all columns from age to occupation_ Transport-moving. This range contains all the features but not the target: 
@@ -167,8 +162,6 @@ print("Test score: $\{:.2f\}$ ).format(logreg.score(X_test, y_test)))
 
 Test score: 0.81 
 
-![image](https://cdn-mineru.openxlab.org.cn/result/2026-04-22/f47cf3e3-1ca2-40ff-bf0d-cff897946d96/32d5e820b1872e8b397e9185e0f96659ee32ebeeddf214095e51e875413ec793.jpg)
-
 
 In this example, we called get_dummies on a DataFrame containing both the training and the test data. This is important to ensure cat‐ egorical values are represented in the same way in the training set and the test set. 
 
@@ -179,9 +172,6 @@ If we built a machine learning model on this data it would work very badly, beca
 # Numbers Can Encode Categoricals
 
 In the example of the adult dataset, the categorical variables were encoded as strings. On the one hand, that opens up the possibility of spelling errors, but on the other hand, it clearly marks a variable as categorical. Often, whether for ease of storage or because of the way the data is collected, categorical variables are encoded as integers. For example, imagine the census data in the adult dataset was collected using a ques‐ tionnaire, and the answers for workclass were recorded as 0 (first box ticked), 1 (sec‐ ond box ticked), 2 (third box ticked), and so on. Now the column will contain numbers from 0 to 8, instead of strings like "Private", and it won’t be immediately obvious to someone looking at the table representing the dataset whether they should treat this variable as continuous or categorical. Knowing that the numbers indicate employment status, however, it is clear that these are very distinct states and should not be modeled by a single continuous variable. 
-
-![image](https://cdn-mineru.openxlab.org.cn/result/2026-04-22/f47cf3e3-1ca2-40ff-bf0d-cff897946d96/2e2e9114d71ef4ada2759efa9c556ff71f6e14ce105eea4ca7a91065c55961e8.jpg)
-
 
 Categorical features are often encoded using integers. That they are numbers doesn’t mean that they should necessarily be treated as continuous features. It is not always clear whether an integer fea‐ ture should be treated as continuous or discrete (and one-hotencoded). If there is no ordering between the semantics that are encoded (like in the workclass example), the feature must be treated as discrete. For other cases, like five-star ratings, the better encoding depends on the particular task and data and which machine learning algorithm is used. 
 
@@ -259,7 +249,7 @@ plt.legend(loc $\equiv$ "best")
 
 As you know, linear models can only model linear relationships, which are lines in the case of a single feature. The decision tree can build a much more complex model of the data. However, this is strongly dependent on the representation of the data. One way to make linear models more powerful on continuous data is to use binning (also known as discretization) of the feature to split it up into multiple features, as described here. 
 
-![image](https://cdn-mineru.openxlab.org.cn/result/2026-04-22/f47cf3e3-1ca2-40ff-bf0d-cff897946d96/3911d6f452edc528f5bd0b13f2c24b59b0576dc286aa308041b6ff42162d8b5e.jpg)
+![[3911d6f452edc528f5bd0b13f2c24b59b0576dc286aa308041b6ff42162d8b5e.jpg|image]]
 
 
 
@@ -373,7 +363,7 @@ pltylabel("Regression output")
 pltxlabel("Input feature") 
 ```
 
-![image](https://cdn-mineru.openxlab.org.cn/result/2026-04-22/f47cf3e3-1ca2-40ff-bf0d-cff897946d96/99cbcbd508e5580dc546e0b967fafcb7fafcb9cde471423d8faf180c28dd5c35.jpg)
+![[99cbcbd508e5580dc546e0b967fafcb7fafcb9cde471423d8faf180c28dd5c35.jpg|image]]
 
 
 
@@ -415,7 +405,7 @@ pltylabel("Regression output")
 pltxlabel("Input feature")   
 plt.plot(X[:，0]，y，'o'，c $= \mathrm{^{\prime}k^{\prime}}$ ） 
 
-![image](https://cdn-mineru.openxlab.org.cn/result/2026-04-22/f47cf3e3-1ca2-40ff-bf0d-cff897946d96/a5a0ff7cb51b1d0ccaf8041abd0039a0b1dc6d02d202fef9bf9e2ba285bb9468.jpg)
+![[a5a0ff7cb51b1d0ccaf8041abd0039a0b1dc6d02d202fef9bf9e2ba285bb9468.jpg|image]]
 
 
 
@@ -454,7 +444,7 @@ plt;ylabel("Regression output")
 plt.xlabel("Input feature")   
 plt.legend(loc $\coloneqq$ "best") 
 
-![image](https://cdn-mineru.openxlab.org.cn/result/2026-04-22/f47cf3e3-1ca2-40ff-bf0d-cff897946d96/20aa2f136877c00be5e0ae9667643cf6dd17e943fcdaa6e21eb34a3a38c2c24f.jpg)
+![[20aa2f136877c00be5e0ae9667643cf6dd17e943fcdaa6e21eb34a3a38c2c24f.jpg|image]]
 
 
 
@@ -523,7 +513,7 @@ plt.xlabel("Input feature")
 plt.legend(loc='best') 
 ```
 
-![image](https://cdn-mineru.openxlab.org.cn/result/2026-04-22/f47cf3e3-1ca2-40ff-bf0d-cff897946d96/b18633ba8a9beae5de67f7cfc549660134456ed0b31193253fd0d9d3d3aaf30e.jpg)
+![[b18633ba8a9beae5de67f7cfc549660134456ed0b31193253fd0d9d3d3aaf30e.jpg|image]]
 
 
 
@@ -545,7 +535,7 @@ pltylabel("Regression output")
 plt.xlabel("Input feature")   
 plt.legend(loc $\equiv$ "best")
 
-![image](https://cdn-mineru.openxlab.org.cn/result/2026-04-22/f47cf3e3-1ca2-40ff-bf0d-cff897946d96/e085025ca55338b996e37ebe2313d5047d515a8485fce92d63693a9dec0f78dd.jpg)
+![[e085025ca55338b996e37ebe2313d5047d515a8485fce92d63693a9dec0f78dd.jpg|image]]
 
 
 
@@ -699,7 +689,7 @@ plt.bar(range(len(bins)), bins, color='w')
 pltylabel("Number of appearances")
 plt.xlabel("Value") 
 
-![image](https://cdn-mineru.openxlab.org.cn/result/2026-04-22/f47cf3e3-1ca2-40ff-bf0d-cff897946d96/1e5a6bc2f9ae5ddec99cdf80d487bf28178cc3259e846ad435d9f7f8aaa05f14.jpg)
+![[1e5a6bc2f9ae5ddec99cdf80d487bf28178cc3259e846ad435d9f7f8aaa05f14.jpg|image]]
 
 
 
@@ -740,7 +730,7 @@ pltylabel("Number of appearances")
 plt.xlabel("Value") 
 ```
 
-![image](https://cdn-mineru.openxlab.org.cn/result/2026-04-22/f47cf3e3-1ca2-40ff-bf0d-cff897946d96/b07dc1be94cfd5607a630537aa47591548c6657f7c8c2454b1994a58fd93bf93.jpg)
+![[b07dc1be94cfd5607a630537aa47591548c6657f7c8c2454b1994a58fd93bf93.jpg|image]]
 
 
 
@@ -827,7 +817,7 @@ Out[40]:
 True True True True True True True True True False True False True True True True True True True True True True True True True True True True True True True True True True 
 ```
 
-![image](https://cdn-mineru.openxlab.org.cn/result/2026-04-22/f47cf3e3-1ca2-40ff-bf0d-cff897946d96/1170b905a667bf1e23f00c37097d02f8120f764e332a551e92f7b408a7115c04.jpg)
+![[1170b905a667bf1e23f00c37097d02f8120f764e332a551e92f7b408a7115c04.jpg|image]]
 
 
 
@@ -941,7 +931,7 @@ plt.subplot(range, -1, 1, mmap='gray_r')
 plt.xlabel('Sample index') 
 ```
 
-![image](https://cdn-mineru.openxlab.org.cn/result/2026-04-22/f47cf3e3-1ca2-40ff-bf0d-cff897946d96/8a44ee2d7520cde60c65874dd60fa74ca71e4d26a036391b0bf66b238a2c7ce6.jpg)
+![[8a44ee2d7520cde60c65874dd60fa74ca71e4d26a036391b0bf66b238a2c7ce6.jpg|image]]
 
 
 
@@ -1021,7 +1011,7 @@ plt.xlabel("Date")
 pltylabel("Rentals") 
 ```
 
-![image](https://cdn-mineru.openxlab.org.cn/result/2026-04-22/f47cf3e3-1ca2-40ff-bf0d-cff897946d96/545ecd203a669308da03197555e393f89a1e21c5761ec207de8e36bbc7177909.jpg)
+![[545ecd203a669308da03197555e393f89a1e21c5761ec207de8e36bbc7177909.jpg|image]]
 
 
 
@@ -1086,7 +1076,7 @@ eval_on_features(X, y, regressor)
 
 # Out[55]:
 
-![image](https://cdn-mineru.openxlab.org.cn/result/2026-04-22/f47cf3e3-1ca2-40ff-bf0d-cff897946d96/95002c838d51c1e1c12ddeaca85a9dce91e36ce75199ffd08556822e509b30ce.jpg)
+![[95002c838d51c1e1c12ddeaca85a9dce91e36ce75199ffd08556822e509b30ce.jpg|image]]
 
 
 
@@ -1111,7 +1101,7 @@ eval_on_features(X_hour, y, regressor)
 Test-set R^2: 0.60
 
 
-![image](https://cdn-mineru.openxlab.org.cn/result/2026-04-22/f47cf3e3-1ca2-40ff-bf0d-cff897946d96/d9b4f18bd6f84817855c78cc8a3ccb8053e82690aaa66443c546b24a5e5f41ce.jpg)
+![[d9b4f18bd6f84817855c78cc8a3ccb8053e82690aaa66443c546b24a5e5f41ce.jpg|image]]
 
 
 
@@ -1134,7 +1124,7 @@ eval_on_features(X_hour_week, y, regressor)
 Test-set R^2: 0.84
 
 
-![image](https://cdn-mineru.openxlab.org.cn/result/2026-04-22/f47cf3e3-1ca2-40ff-bf0d-cff897946d96/f56a8028f615b83b318186ce4c44ad58c27c4ba2e34fd1ab60f9546165395410.jpg)
+![[f56a8028f615b83b318186ce4c44ad58c27c4ba2e34fd1ab60f9546165395410.jpg|image]]
 
 
 
@@ -1152,7 +1142,7 @@ eval_on_features(X_hour_week, y, LinearRegression())
 
 # Out[58]:
 
-![image](https://cdn-mineru.openxlab.org.cn/result/2026-04-22/f47cf3e3-1ca2-40ff-bf0d-cff897946d96/53925d97d325cb0a7a50eb7b2d179011483c3a4326be1cf487195b3335890097.jpg)
+![[53925d97d325cb0a7a50eb7b2d179011483c3a4326be1cf487195b3335890097.jpg|image]]
 
 
 
@@ -1176,7 +1166,7 @@ Out[60]:
 
 Test-set R^2: 0.62 
 
-![image](https://cdn-mineru.openxlab.org.cn/result/2026-04-22/f47cf3e3-1ca2-40ff-bf0d-cff897946d96/264204f14c1a90e510e55bb0a9c6f53162a4fd09e1248c81cb24ec822d1e2d81.jpg)
+![[264204f14c1a90e510e55bb0a9c6f53162a4fd09e1248c81cb24ec822d1e2d81.jpg|image]]
 
 
 
@@ -1199,7 +1189,7 @@ Out[61]:
 
 Test-set R^2: 0.85 
 
-![image](https://cdn-mineru.openxlab.org.cn/result/2026-04-22/f47cf3e3-1ca2-40ff-bf0d-cff897946d96/8a096a01228a034efcffdcb839d3b2316fe49ded8735223773861742eae13db4.jpg)
+![[8a096a01228a034efcffdcb839d3b2316fe49ded8735223773861742eae13db4.jpg|image]]
 
 
 
@@ -1234,7 +1224,7 @@ plt.plot(coef_nonzero,'o')
 pltatorynp.arange(len(coef_nonzero)),features_nonzero,rotation $= 90$ pltxlabel("Feature magnitude")  
 pltylabel("Feature") 
 
-![image](https://cdn-mineru.openxlab.org.cn/result/2026-04-22/f47cf3e3-1ca2-40ff-bf0d-cff897946d96/42895b7cdce10ab04b5886f554dba3e29c4bf4ce61d2d7c0b47c7846aed1d0d3.jpg)
+![[42895b7cdce10ab04b5886f554dba3e29c4bf4ce61d2d7c0b47c7846aed1d0d3.jpg|image]]
 
 
 
