@@ -15,8 +15,7 @@ In this chapter, we will first go over the important and very common case of cat
 As an example, we will use the dataset of adult incomes in the United States, derived from the 1994 census database. The task of the adult dataset is to predict whether a worker has an income of over $\$ 50,000$ or under $\$ 50,000$ . The features in this dataset include the workers’ ages, how they are employed (self employed, private industry employee, government employee, etc.), their education, their gender, their working hours per week, occupation, and more. Table 4-1 shows the first few entries in the dataset. 
 
 
-Table 4-1. e first few entries in the adult dataset
-
+Table 4-1. The first few entries in the adult dataset
 
 <table><tr><td></td><td>age</td><td>workclass</td><td>education</td><td>gender</td><td>hours-per-week</td><td>occupation</td><td>income</td></tr><tr><td>0</td><td>39</td><td>State-gov</td><td>Bachelors</td><td>Male</td><td>40</td><td>Adm-clerical</td><td>&lt;=50K</td></tr><tr><td>1</td><td>50</td><td>Self-emp-not-inc</td><td>Bachelors</td><td>Male</td><td>13</td><td>Exec-managerial</td><td>&lt;=50K</td></tr><tr><td>2</td><td>38</td><td>Private</td><td>HS-grad</td><td>Male</td><td>40</td><td>Handling-cleaners</td><td>&lt;=50K</td></tr><tr><td>3</td><td>53</td><td>Private</td><td>11th</td><td>Male</td><td>40</td><td>Handling-cleaners</td><td>&lt;=50K</td></tr><tr><td>4</td><td>28</td><td>Private</td><td>Bachelors</td><td>Female</td><td>40</td><td>Prof-specialty</td><td>&lt;=50K</td></tr><tr><td>5</td><td>37</td><td>Private</td><td>Masters</td><td>Female</td><td>40</td><td>Exec-managerial</td><td>&lt;=50K</td></tr><tr><td>6</td><td>49</td><td>Private</td><td>9th</td><td>Female</td><td>16</td><td>Other-service</td><td>&lt;=50K</td></tr><tr><td>7</td><td>52</td><td>Self-emp-not-inc</td><td>HS-grad</td><td>Male</td><td>45</td><td>Exec-managerial</td><td>&gt;50K</td></tr><tr><td>8</td><td>31</td><td>Private</td><td>Masters</td><td>Female</td><td>50</td><td>Prof-specialty</td><td>&gt;50K</td></tr><tr><td>9</td><td>42</td><td>Private</td><td>Bachelors</td><td>Male</td><td>40</td><td>Exec-managerial</td><td>&gt;50K</td></tr><tr><td>10</td><td>37</td><td>Private</td><td>Some-college</td><td>Male</td><td>80</td><td>Exec-managerial</td><td>&gt;50K</td></tr></table>
 
@@ -75,9 +74,7 @@ display(data.head())
 Table 4-3 shows the result.
 
 
-
-Table 4-3. e first five rows of the adult dataset
-
+Table 4-3. The first five rows of the adult dataset
 
 <table><tr><td></td><td>age</td><td>workclass</td><td>education</td><td>gender</td><td>hours-per-week</td><td>occupation</td><td>income</td></tr><tr><td>0</td><td>39</td><td>State-gov</td><td>Bachelors</td><td>Male</td><td>40</td><td>Adm-clerical</td><td>&lt;=50K</td></tr><tr><td>1</td><td>50</td><td>Self-emp-not-inc</td><td>Bachelors</td><td>Male</td><td>13</td><td>Exec-managerial</td><td>&lt;=50K</td></tr><tr><td>2</td><td>38</td><td>Private</td><td>HS-grad</td><td>Male</td><td>40</td><td>Handler-cleaners</td><td>&lt;=50K</td></tr><tr><td>3</td><td>53</td><td>Private</td><td>11th</td><td>Male</td><td>40</td><td>Handler-cleaners</td><td>&lt;=50K</td></tr><tr><td>4</td><td>28</td><td>Private</td><td>Bachelors</td><td>Female</td><td>40</td><td>Prof-specialty</td><td>&lt;=50K</td></tr></table>
 
