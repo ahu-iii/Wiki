@@ -71,11 +71,11 @@ Each sub-layer is wrapped in a [[Residual Connection]] followed by [[Layer Norma
 
 - Built from: [[Multi-Head Attention]], [[Self-Attention]], [[Positional Encoding]], [[Residual Connection]], [[Layer Normalization]].
 - Part of: [[Neural Machine Translation]], [[Sequence Transduction]].
-- Contrasts with: RNN/LSTM encoder-decoders, [[ByteNet]]-style convolutional sequence models, ConvS2S.
+- Contrasts with: RNN/LSTM encoder-decoders, ByteNet-style convolutional sequence models, ConvS2S.
 
-## Evidence and Sources
+## Sources
 
-- [[Attention Is All You Need]]: introduces the architecture and reports state-of-the-art BLEU on WMT 2014 EN-DE and EN-FR at a fraction of prior training cost.
+- [[Attention Is All You Need]] — introduces the architecture and reports state-of-the-art BLEU on WMT 2014 EN-DE and EN-FR at a fraction of prior training cost.
 
 ## Gaps and Open Questions
 

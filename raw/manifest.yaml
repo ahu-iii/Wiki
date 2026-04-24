@@ -15,3 +15,21 @@ sources:
   - path: raw/papers/attention-is-all-you-need-Paper.pdf
     wiki_page: Attention Is All You Need
     status: active
+
+  - path: raw/books/Introduction_to_Machine_Learning_with_Python_Chapter_4.md
+    wiki_page: Introduction to Machine Learning with Python (Muller & Guido)
+    status: active
+    note: |
+      Chapter 4 — Representing Data and Engineering Features. Pre-extracted
+      markdown (1234 lines). Paired with the Chapter 3 PDF + MinerU extraction
+      listed below; all three raw files feed the same wiki source page.
+
+  - path: raw/books/Introduction to Machine Learning with Python A Guide for Data Scientists (Andreas C. Müller, Sarah Guido) (z-library.sk, 1lib.sk, z-lib.sk)-145-223.pdf
+    wiki_page: Introduction to Machine Learning with Python (Muller & Guido)
+    status: active
+    note: Chapter 3 PDF (pp. 145–223). Extracted via MinerU VLM — see the .extracted.md entry below.
+
+  - path: raw/books/2026-04-21-intro-ml-python-pp145-223.extracted.md
+    wiki_page: Introduction to Machine Learning with Python (Muller & Guido)
+    status: active
+    note: MinerU VLM extraction of the Chapter 3 PDF above. 187 figures under _attachments/intro-ml-python-pp145-223/.

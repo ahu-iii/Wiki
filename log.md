@@ -10,6 +10,18 @@ updated: 2026-04-22
 > Never edit past entries.
 > Format: `## [YYYY-MM-DD] operation | Title`
 
+## [2026-04-24] lint | 5 findings (3 HIGH, 0 MEDIUM, 2 LOW)
+- Report: [[lint-report-2026-04-24]]
+- Scanned: 76 wiki pages + 4 root meta files (index, hot, overview, log)
+- HIGH findings:
+  - `[source-status]` `raw/manifest.yaml` missing entry for the Müller & Guido book — 44 wiki pages depend on an untracked source
+  - `[missing-sources-footer]` 27 pages without a literal `## Sources` heading — 13 use the `## Evidence and Sources` variant, 14 omit the footer entirely (all legacy from the 2026-04-17 Transformer ingest)
+  - `[dead-links]` `[[ByteNet]]` in [[Transformer]] — no destination page
+- LOW findings: 3 `.md`-suffixed wikilinks in log.md (`[[index.md]]`, `[[hot.md]]`, `[[overview.md]]`); 5 empty content-page section bodies (topic pages' `## Current Understanding`)
+- Clean: orphans 0, contradictions 0, supersessions 0, index-drift 0, stale-meta 0 (hot/overview 2 days old)
+- Trust report refreshed as side-effect: 0 low, 48 medium, 25 high (no page dropped into the `low` tier)
+- Coverage suggestions: 5 questions (representation-learning bridge, Transformer lineage, NMT comparison numbers, Müller & Guido Ch. 1–2 supervised learning, Ch. 5–6 pipelines/evaluation) + 3 source types (Hinton-Salakhutdinov 2006 autoencoder bridge, Bahdanau 2014 + Sutskever 2014 Transformer predecessors, Müller & Guido remaining chapters)
+
 ## [2026-04-22] ingest | Introduction to Machine Learning with Python (Chapter 4 — Representing Data and Engineering Features)
 - Source: `raw/books/Introduction_to_Machine_Learning_with_Python_Chapter_4.md` (pre-extracted markdown, 1234 lines)
 - Summary: [[Introduction to Machine Learning with Python (Muller & Guido)]] (extended; Chapter 3 ingested 2026-04-21)
