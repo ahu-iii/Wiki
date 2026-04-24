@@ -1,7 +1,7 @@
 ---
 type: meta
 title: "Wiki Log"
-updated: 2026-04-21
+updated: 2026-04-22
 ---
 
 # Wiki Log
@@ -9,6 +9,18 @@ updated: 2026-04-21
 > Chronological record of wiki operations. **New entries go at the top.**
 > Never edit past entries.
 > Format: `## [YYYY-MM-DD] operation | Title`
+
+## [2026-04-22] ingest | Introduction to Machine Learning with Python (Chapter 4 — Representing Data and Engineering Features)
+- Source: `raw/books/Introduction_to_Machine_Learning_with_Python_Chapter_4.md` (pre-extracted markdown, 1234 lines)
+- Summary: [[Introduction to Machine Learning with Python (Muller & Guido)]] (extended; Chapter 3 ingested 2026-04-21)
+- Created (18 pages):
+  - Topics: [[Feature Engineering]], [[Feature Selection]]
+  - Concepts: [[Categorical Variable]], [[Continuous Feature]], [[One-Hot Encoding]], [[Binning]], [[Interaction Feature]], [[Polynomial Features]], [[Polynomial Regression]], [[Univariate Nonlinear Transformation]], [[Univariate Feature Selection]], [[Model-Based Feature Selection]], [[Recursive Feature Elimination]]
+  - Entities: [[Adult Dataset]], [[Boston Housing Dataset]], [[Citi Bike Dataset]], [[Wave Dataset]], [[pandas]]
+- Updated (8 pages): [[Introduction to Machine Learning with Python (Muller & Guido)]] (Chapter 4 key claims, entities, split concepts), [[Data Preprocessing]] (Adjacent: feature engineering pointer, scaling-vs-one-hot open question answered), [[scikit-learn]] (`OneHotEncoder`, `PolynomialFeatures`, `KBinsDiscretizer`, `sklearn.feature_selection` family), [[Andreas C. Müller]] (Chapter-4 coverage note), [[MinMaxScaler]] (backlink retrofit to [[One-Hot Encoding]]), [[index.md]], [[overview.md]], [[hot.md]]
+- Backlink audit: grep for "categorical", "one-hot", "polynomial features", "feature selection", "feature engineering", "binning", "pandas", "boston", "adult", "citi bike", "wave dataset" across pre-existing pages. One retrofit needed ([[MinMaxScaler]] gap callout). "one-hot" in [[Vector Quantization]] refers to k-means assignment, not categorical encoding — left as-is. "one-hot" in [[Label Smoothing]] refers to the training target distribution — left as-is.
+- Supersessions / contradictions: none. Chapter 4 is strictly additive to Chapter 3.
+- Key insight: the feature representation often matters more than the algorithm. On [[Citi Bike Dataset]], raw POSIX time gives R² = −0.03 (worse than the mean); mechanical decomposition into hour-of-day × day-of-week one-hot + interactions reaches R² = 0.85 with the same linear model. On [[Boston Housing Dataset]], `PolynomialFeatures(degree=2)` lifts Ridge R² from 0.621 to 0.753 while *dropping* random-forest R² from 0.799 to 0.763 — explicit interactions help linear models and hurt tree ensembles, a clean illustration of model-aware feature engineering.
 
 ## [2026-04-21] ingest | Introduction to Machine Learning with Python (pp. 145–223)
 - Source: `raw/books/Introduction to Machine Learning with Python A Guide for Data Scientists (Andreas C. Müller, Sarah Guido) (z-library.sk, 1lib.sk, z-lib.sk)-145-223.pdf`

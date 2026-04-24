@@ -54,7 +54,7 @@ It is a common alternative to [[StandardScaler]] when feature distributions are 
 
 ## Gaps and Open Questions
 
-> [!gap] The chapter does not discuss custom feature ranges (e.g. `[-1, 1]`) or how scaling interacts with one-hot encoded categorical features.
+> [!gap] The chapter does not discuss custom feature ranges (e.g. `[-1, 1]`). Interaction with [[One-Hot Encoding|one-hot encoded]] categorical features is addressed indirectly in Chapter 4 — one-hot columns are already on a 0/1 scale and are typically left unscaled when the continuous block is standardised.
 
 ## Sources
 

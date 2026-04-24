@@ -1,7 +1,7 @@
 ---
 type: meta
 title: "Research Overview"
-updated: 2026-04-21
+updated: 2026-04-22
 status: seed
 ---
 
@@ -15,7 +15,7 @@ status: seed
 The wiki now covers two disjoint subgraphs:
 
 1. **Attention-based [[Neural Machine Translation]]** — anchored by [[Attention Is All You Need]] (Vaswani et al., NIPS 2017). The core architectural concept is the [[Transformer]], built from [[Self-Attention]], [[Multi-Head Attention]], [[Scaled Dot-Product Attention]], and [[Positional Encoding]] on top of an [[Encoder-Decoder Architecture]].
-2. **Classical ML — [[Unsupervised Learning]] and [[Data Preprocessing]]** — anchored by [[Introduction to Machine Learning with Python (Muller & Guido)]] (Müller & Guido, O'Reilly 2016), pp. 145–223. Covers per-feature scaling ([[StandardScaler]], [[MinMaxScaler]], [[RobustScaler]], [[Normalizer]]); dimensionality reduction and manifold learning ([[Principal Component Analysis]], [[Non-Negative Matrix Factorization]], [[t-SNE]]); clustering ([[k-Means Clustering]], [[Agglomerative Clustering]], [[DBSCAN]]) with evaluation via [[Adjusted Rand Index]] and [[Silhouette Coefficient]].
+2. **Classical ML — [[Unsupervised Learning]], [[Data Preprocessing]], [[Feature Engineering]], and [[Feature Selection]]** — anchored by [[Introduction to Machine Learning with Python (Muller & Guido)]] (Müller & Guido, O'Reilly 2016), Chapters 3–4. Chapter 3 (pp. 145–223) covers per-feature scaling ([[StandardScaler]], [[MinMaxScaler]], [[RobustScaler]], [[Normalizer]]); dimensionality reduction and manifold learning ([[Principal Component Analysis]], [[Non-Negative Matrix Factorization]], [[t-SNE]]); clustering ([[k-Means Clustering]], [[Agglomerative Clustering]], [[DBSCAN]]) with evaluation via [[Adjusted Rand Index]] and [[Silhouette Coefficient]]. Chapter 4 covers representing non-numeric and non-linear structure: [[One-Hot Encoding]] for [[Categorical Variable|categorical features]]; [[Binning]], [[Interaction Feature|interactions]], [[Polynomial Features]], and [[Univariate Nonlinear Transformation|log-type transforms]] for continuous features; and the three feature-selection families — [[Univariate Feature Selection]], [[Model-Based Feature Selection]], [[Recursive Feature Elimination]].
 
 The two subgraphs share no edges yet. A representation-learning or autoencoder source would be the natural bridge.
 
@@ -28,6 +28,8 @@ The two subgraphs share no edges yet. A representation-learning or autoencoder s
 - **Distance-based models demand scaling**: [[StandardScaler]] flips RBF SVC accuracy on breast-cancer from 0.63 to 0.97; similar gains appear for any algorithm that depends on Euclidean distance or variance.
 - **Clustering algorithm choice encodes geometric assumptions**: [[k-Means Clustering]] assumes convex equal-size blobs; [[Agglomerative Clustering]] produces a full hierarchy; [[DBSCAN]] finds arbitrary shapes and surfaces outliers. No algorithm is universally "best".
 - **Evaluation metrics can disagree**: [[Silhouette Coefficient]] favors convex clusters even when [[DBSCAN]]'s shape-flexible result is qualitatively better; ground-truth-based [[Adjusted Rand Index]] is chance-corrected but requires labels.
+- **Feature representation dominates algorithm choice for linear models**: on [[Citi Bike Dataset]], raw POSIX time gives R² = −0.03; mechanical decomposition to `hour_of_day` + `day_of_week` + one-hot + interactions reaches R² = 0.85 without changing the model. On [[Boston Housing Dataset]], `PolynomialFeatures(degree=2)` lifts Ridge R² from 0.621 to 0.753 while *dropping* random-forest R² from 0.799 to 0.763 — explicit interactions help linear models and hurt tree ensembles.
+- **Feature-selection family trade-off**: [[Univariate Feature Selection]] is fast and blind to interactions; [[Model-Based Feature Selection]] with a tree base estimator captures interactions cheaply; [[Recursive Feature Elimination]] is most accurate but most expensive. On breast-cancer + 50 noise features, they score 0.940 / 0.951 / 0.951 vs a 0.930 baseline.
 
 ## Strongest Claims
 
@@ -46,7 +48,7 @@ The two subgraphs share no edges yet. A representation-learning or autoencoder s
 - Transformer concept pages for [[Residual Connection]], [[Layer Normalization]], [[Byte-Pair Encoding]], [[Label Smoothing]], [[Beam Search]], and [[BLEU Score]] are seed-level; their originating papers have not been ingested.
 - No post-2017 Transformer work is represented (BERT, GPT family, ViT, scaling laws, long-context attention variants).
 - No Transformer predecessor work is represented (Bahdanau 2014 attention, Sutskever 2014 seq2seq, ResNet 2016, LayerNorm 2016).
-- Classical-ML coverage is from one book excerpt (pp. 145–223) only; supervised learning (pp. 1–144) and text/pipelines/model-evaluation (pp. 224+) remain un-ingested.
+- Classical-ML coverage is from one book (Chapters 3–4) only; supervised learning (pp. 1–144, Chapter 2) and text/pipelines/model-evaluation (pp. 224+, Chapters 5–7) remain un-ingested.
 - No bridge between classical ML and deep learning — no autoencoder, representation-learning, or self-supervised source yet.
 - Several entity pages carry `[!gap]` callouts (Guido bio, O'Reilly role beyond publisher, SciPy scope beyond `scipy.cluster.hierarchy`, exact dimensions of Digits/Iris).
 
