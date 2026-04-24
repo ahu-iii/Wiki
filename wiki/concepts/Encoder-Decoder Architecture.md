@@ -49,7 +49,7 @@ In the [[Transformer]] both encoder and decoder are stacks of N=6 identical laye
 - Implementations: [[Transformer]] (attention-only), RNN/LSTM seq2seq, ConvS2S, ByteNet.
 - Part of: [[Sequence Transduction]].
 
-## Evidence and Sources
+## Sources
 
 - [[Attention Is All You Need]]: Section 3 defines the encoder-decoder setting used throughout the paper; Figure 1 depicts the [[Transformer]] instance.
 

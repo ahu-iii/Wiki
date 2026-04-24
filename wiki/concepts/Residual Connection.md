@@ -43,7 +43,7 @@ All sub-layers and embedding layers produce vectors of the same dimension d_mode
 - Paired with: [[Layer Normalization]] in the Transformer.
 - Part of: [[Transformer]].
 
-## Evidence and Sources
+## Sources
 
 - [[Attention Is All You Need]]: Section 3.1 applies residual connections around every sub-layer.
 

@@ -37,7 +37,7 @@ The Transformer paper also caps maximum output length at `input length + 50` and
 
 - Used at inference time by: [[Transformer]] and predecessor seq2seq models.
 
-## Evidence and Sources
+## Sources
 
 - [[Attention Is All You Need]]: Section 6.1 lists beam search settings used for translation.
 

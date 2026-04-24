@@ -58,7 +58,7 @@ In practice, queries are batched into a matrix Q and the computation is a pair o
 - Instance of: [[Attention Mechanism]].
 - Related to: additive (Bahdanau) attention.
 
-## Evidence and Sources
+## Sources
 
 - [[Attention Is All You Need]]: Section 3.2.1 introduces the formulation and justifies the 1/√d_k scaling.
 

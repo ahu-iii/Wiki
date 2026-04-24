@@ -32,7 +32,7 @@ Layer normalization normalizes the activations of a layer across its features, f
 - Paired with: [[Residual Connection]].
 - Part of: [[Transformer]].
 
-## Evidence and Sources
+## Sources
 
 - [[Attention Is All You Need]]: Section 3.1 describes post-residual layer normalization.
 

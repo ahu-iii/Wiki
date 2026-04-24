@@ -53,7 +53,7 @@ The positional encoding has the same dimension d_model as the token embeddings, 
 - Contrasts with: implicit position signals in RNNs and CNNs.
 - Part of: [[Transformer]].
 
-## Evidence and Sources
+## Sources
 
 - [[Attention Is All You Need]]: Section 3.5 defines the sinusoidal encoding; Table 3(E) compares it with learned positional embeddings.
 

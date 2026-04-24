@@ -50,7 +50,7 @@ Softmax over the compatibility scores gives the attention weights, which are the
 - Specializations: [[Self-Attention]], [[Scaled Dot-Product Attention]], [[Multi-Head Attention]].
 - Historically used alongside: recurrent networks (RNN/LSTM), convolutional networks (ConvS2S, ByteNet), end-to-end memory networks.
 
-## Evidence and Sources
+## Sources
 
 - [[Attention Is All You Need]]: gives the general query/key/value formulation and argues attention alone suffices for sequence transduction.
 

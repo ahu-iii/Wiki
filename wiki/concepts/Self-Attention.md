@@ -66,7 +66,7 @@ From Table 1 of the paper, comparing layer types on (complexity, sequential oper
 - Contrasts with: RNN hidden-state recurrence, convolutional layers.
 - Part of: [[Transformer]].
 
-## Evidence and Sources
+## Sources
 
 - [[Attention Is All You Need]]: introduces self-attention as a complete replacement for recurrence in sequence transduction; empirically best on WMT 2014.
 

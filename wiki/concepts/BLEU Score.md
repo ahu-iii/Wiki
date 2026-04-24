@@ -49,7 +49,7 @@ BLEU (not introduced in this paper, cited implicitly via decades of MT evaluatio
 - Metric for: [[Neural Machine Translation]].
 - Reported on: [[WMT 2014]] benchmarks.
 
-## Evidence and Sources
+## Sources
 
 - [[Attention Is All You Need]]: reports BLEU for the [[Transformer]] on WMT 2014 EN-DE and EN-FR (Table 2); uses BLEU throughout ablation studies (Table 3).
 

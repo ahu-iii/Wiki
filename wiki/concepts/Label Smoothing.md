@@ -36,7 +36,7 @@ Label smoothing replaces the one-hot target distribution with a softer distribut
 - Used alongside: residual dropout and the Adam warmup schedule in the Transformer.
 - Part of: [[Transformer]].
 
-## Evidence and Sources
+## Sources
 
 - [[Attention Is All You Need]]: Section 5.4 notes label smoothing at 0.1 improves BLEU at the cost of perplexity.
 

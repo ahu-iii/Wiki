@@ -60,7 +60,7 @@ Used in three places in the [[Transformer]]:
 - Instance of: [[Attention Mechanism]].
 - Part of: [[Transformer]].
 
-## Evidence and Sources
+## Sources
 
 - [[Attention Is All You Need]]: Section 3.2.2 introduces multi-head attention; Table 3(A)(B) ablates head count and key dimension on WMT 2014 EN-DE newstest2013.
 

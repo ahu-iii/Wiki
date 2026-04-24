@@ -40,7 +40,7 @@ Byte-pair encoding (BPE) is a subword tokenization algorithm that iteratively me
 - Alternative to: character-level and whole-word vocabularies.
 - Related to: word-piece tokenization used for EN-FR in the Transformer.
 
-## Evidence and Sources
+## Sources
 
 - [[Attention Is All You Need]]: Section 5.1 reports BPE vocabulary sizes for EN-DE and EN-FR training.
 
