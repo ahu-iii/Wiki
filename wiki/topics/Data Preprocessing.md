@@ -39,6 +39,10 @@ Müller and Guido focus on four scaling transformers in Chapter 3 ([[Introductio
 
 These feed directly into estimators whose performance depends on feature scale — kernel SVMs, neural networks, k-nearest-neighbors, [[Principal Component Analysis]], [[k-Means Clustering]], and [[DBSCAN]] all assume comparable feature magnitudes.
 
+### Adjacent: feature engineering
+
+Scaling is one preprocessing concern; representing non-numeric and non-linear structure is another. [[Feature Engineering]] covers the complementary transformations introduced in Chapter 4 — [[One-Hot Encoding]] for categorical columns, [[Binning]] and [[Polynomial Features]] for shaping continuous features, [[Univariate Nonlinear Transformation|log-type transforms]] for skewed counts, and the three feature-selection families under [[Feature Selection]] ([[Introduction to Machine Learning with Python (Muller & Guido)]]).
+
 ## Key Concepts
 
 - [[StandardScaler]] — zero-mean, unit-variance scaling; sensitive to outliers because it uses mean and variance.
@@ -81,10 +85,10 @@ Preprocessing can dramatically change downstream model quality. On the [[Breast 
 
 ## Open Questions
 
-- How should scaling interact with one-hot encoded categorical features? (Not addressed in this excerpt.)
+- How should scaling interact with [[One-Hot Encoding|one-hot encoded]] categorical features? Chapter 4 implicitly answers this: one-hot columns are already on a shared 0/1 scale and so are typically left alone when the continuous features are standardised around them ([[Introduction to Machine Learning with Python (Muller & Guido)]]). Tree models are invariant to both operations; for linear and distance-based models the convention is to scale the continuous block and leave the one-hot block as-is.
 
 > [!gap]
-> Chapter 3 does not discuss encoding of categorical features, missing-value imputation, or scaling-aware cross-validation pipelines; these appear elsewhere in the book.
+> Chapter 3 does not discuss missing-value imputation or scaling-aware cross-validation pipelines; these appear later in the book. Categorical-encoding coverage was added from Chapter 4 — see [[Feature Engineering]].
 
 ## Sources
 

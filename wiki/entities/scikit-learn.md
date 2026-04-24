@@ -2,7 +2,7 @@
 type: entity
 title: "scikit-learn"
 created: 2026-04-21
-updated: 2026-04-21
+updated: 2026-04-22
 tags:
   - type/entity
   - domain/machine-learning
@@ -14,10 +14,13 @@ aliases: ["sklearn"]
 status: developing
 related:
   - "[[Data Preprocessing]]"
+  - "[[Feature Engineering]]"
+  - "[[Feature Selection]]"
   - "[[Unsupervised Learning]]"
   - "[[Principal Component Analysis]]"
   - "[[k-Means Clustering]]"
   - "[[DBSCAN]]"
+  - "[[pandas]]"
   - "[[Introduction to Machine Learning with Python (Muller & Guido)]]"
 sources:
   - "[[Introduction to Machine Learning with Python (Muller & Guido)]]"
@@ -36,13 +39,16 @@ sources:
 - Ships evaluation metrics [[Adjusted Rand Index]] (`adjusted_rand_score`) and [[Silhouette Coefficient]] (`silhouette_score`) ([[Introduction to Machine Learning with Python (Muller & Guido)]]).
 - Bundles the [[Breast Cancer Dataset]], [[Labeled Faces in the Wild]] (`fetch_lfw_people`), [[Digits Dataset]] (`load_digits`), and [[Iris Dataset]] used in the chapter's worked examples ([[Introduction to Machine Learning with Python (Muller & Guido)]]).
 - Does **not** provide a built-in dendrogram plotting function; the book falls back to [[SciPy]]'s `scipy.cluster.hierarchy` for that ([[Introduction to Machine Learning with Python (Muller & Guido)]]).
+- Ships `sklearn.preprocessing.OneHotEncoder` for [[One-Hot Encoding]] with a learned vocabulary, `PolynomialFeatures` for [[Polynomial Features]] (with `interaction_only=True` for pure [[Interaction Feature|interactions]]), and `KBinsDiscretizer` (plus `np.digitize`) for [[Binning]] ([[Introduction to Machine Learning with Python (Muller & Guido)]]).
+- Ships the feature-selection family under `sklearn.feature_selection`: `SelectKBest` / `SelectPercentile` with `f_classif`, `f_regression`, `chi2` for [[Univariate Feature Selection]]; `SelectFromModel` for [[Model-Based Feature Selection]]; `RFE` and `RFECV` for [[Recursive Feature Elimination]] ([[Introduction to Machine Learning with Python (Muller & Guido)]]).
+- Cooperates with [[pandas]] DataFrames at the input boundary — `pandas.get_dummies` is the lightweight alternative to `OneHotEncoder`, and pandas handles the [[Citi Bike Dataset]] timestamp decomposition that Chapter 4's expert-knowledge feature-engineering example depends on ([[Introduction to Machine Learning with Python (Muller & Guido)]]).
 
 ## Connections
 
 - Taught by: [[Introduction to Machine Learning with Python (Muller & Guido)]].
 - Maintained by (among others): [[Andreas C. Müller]].
-- Complemented by: [[SciPy]] (for [[Dendrogram]] plotting).
-- Covers topics: [[Data Preprocessing]], [[Unsupervised Learning]].
+- Complemented by: [[SciPy]] (for [[Dendrogram]] plotting), [[pandas]] (DataFrame input).
+- Covers topics: [[Data Preprocessing]], [[Unsupervised Learning]], [[Feature Engineering]], [[Feature Selection]].
 
 ## See Also
 

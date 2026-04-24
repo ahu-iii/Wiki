@@ -2,7 +2,7 @@
 type: entity
 title: "Andreas C. Müller"
 created: 2026-04-21
-updated: 2026-04-21
+updated: 2026-04-22
 tags:
   - type/entity
   - domain/machine-learning
@@ -25,7 +25,7 @@ sources:
 
 ## Key Facts
 
-- Co-authored *Introduction to Machine Learning with Python* (Chapter 3 pp. 145–223 covers [[Unsupervised Learning]] and [[Data Preprocessing]]) ([[Introduction to Machine Learning with Python (Muller & Guido)]]).
+- Co-authored *Introduction to Machine Learning with Python*: Chapter 3 (pp. 145–223) covers [[Unsupervised Learning]] and [[Data Preprocessing]]; Chapter 4 covers [[Feature Engineering]] and [[Feature Selection]] ([[Introduction to Machine Learning with Python (Muller & Guido)]]).
 - Identified as a scikit-learn core contributor in the wiki source record for this book ([[Introduction to Machine Learning with Python (Muller & Guido)]]).
 - Further biographical details (employer, education, current role) not established from the excerpt. (?)
 
