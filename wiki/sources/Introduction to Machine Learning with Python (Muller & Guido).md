@@ -53,6 +53,21 @@ sources:
 - Applying [[StandardScaler]] before an RBF-kernel SVM on the breast-cancer dataset raises test accuracy from 0.63 to 0.97.
 - Whitened [[Principal Component Analysis]] followed by 1-nearest-neighbor on the [[Labeled Faces in the Wild]] dataset raises face-identification accuracy from 26.6% to 35.7%.
 
+### Chapter 4 — Feature Engineering and Feature Selection
+
+- A [[Categorical Variable]] must be encoded (typically via [[One-Hot Encoding]]) before a linear model can use it; integer codes imply an ordering the model will over-fit to.
+- `pandas.get_dummies` encodes string-typed columns automatically; `sklearn.preprocessing.OneHotEncoder` learns a vocabulary at fit time and handles the train/test column-alignment problem `get_dummies` does not.
+- [[Binning]] a [[Continuous Feature]] and one-hot encoding the bins turns linear regression into a piecewise-constant fit; on the [[Wave Dataset]] this matches a shallow decision tree, and on tree models it is essentially a no-op.
+- [[Interaction Feature|Interaction features]] (products of inputs) let linear models represent combination effects. On binned + interacted wave data, a linear model fits per-bin slopes.
+- [[Polynomial Features]] (`sklearn.preprocessing.PolynomialFeatures`) produce monomials up to degree `d`; on the [[Boston Housing Dataset]], degree 2 expands 13 features to 105 and lifts Ridge R² from 0.621 to 0.753 — while dropping random-forest R² from 0.799 to 0.763.
+- A [[Univariate Nonlinear Transformation]] like `log(x+1)` reshapes skewed count data; on the chapter's synthetic Poisson benchmark Ridge R² rises from 0.622 to 0.875.
+- Expert-knowledge feature engineering on the [[Citi Bike Dataset]]: raw POSIX time gives R² = −0.03; decomposing into `hour_of_day` + `day_of_week` with one-hot + interactions reaches R² = 0.85.
+- Three feature-selection families ship in `sklearn.feature_selection`:
+  - [[Univariate Feature Selection]] (`SelectKBest`, `SelectPercentile`, `f_classif`, `f_regression`) — fastest, but blind to interactions.
+  - [[Model-Based Feature Selection]] (`SelectFromModel`) — uses one trained estimator's `coef_` or `feature_importances_`; captures interactions.
+  - [[Recursive Feature Elimination]] (`RFE`) — iterative drop-and-refit; most expensive.
+- On breast-cancer + 50 noise features: logistic regression test accuracy 0.930 (all 80 features) → 0.940 (univariate, 40 features) → 0.951 (both `SelectFromModel` and `RFE` with random-forest base estimator at 40 features).
+
 ## Methodology
 
 The chapter is a practitioner-oriented textbook exposition built around the [[scikit-learn]] API. Each method is introduced with a short conceptual sketch, then demonstrated on one or two datasets chosen to illustrate strengths and failure modes: the [[Breast Cancer Dataset]] for scaling and PCA, [[Labeled Faces in the Wild]] for PCA eigenfaces and face matching, the [[Digits Dataset]] for t-SNE versus PCA visualization, synthetic `make_blobs` for k-means, and two-moons for demonstrating where k-means fails and DBSCAN succeeds. Code follows the standard scikit-learn `fit` / `transform` / `fit_transform` / `fit_predict` convention. No theoretical derivations or proofs are presented.
@@ -64,12 +79,19 @@ The chapter is a practitioner-oriented textbook exposition built around the [[sc
 - [[O'Reilly Media]] — publisher (first edition, 2016).
 - [[scikit-learn]] — the machine-learning library whose API the book teaches.
 - [[SciPy]] — used for the `scipy.cluster.hierarchy` dendrogram plotting helpers.
-- [[Breast Cancer Dataset]] — primary dataset for scaling and classification examples.
+- [[pandas]] — DataFrame library used throughout Chapter 4 for CSV loading, `get_dummies`, and datetime decomposition.
+- [[Breast Cancer Dataset]] — primary dataset for scaling, classification, and the Chapter 4 feature-selection benchmark.
 - [[Labeled Faces in the Wild]] — image dataset for PCA eigenfaces and NMF components.
 - [[Digits Dataset]] — 8×8 handwritten-digit dataset for t-SNE visualization.
 - [[Iris Dataset]] — used in earlier scaler discussion and for cluster-evaluation examples.
+- [[Adult Dataset]] — 1994 US Census extract used in Chapter 4 to demonstrate categorical encoding.
+- [[Boston Housing Dataset]] — regression benchmark anchoring the `PolynomialFeatures` demonstration.
+- [[Citi Bike Dataset]] — NYC bike-rental case study for expert-knowledge feature engineering.
+- [[Wave Dataset]] — synthetic 1-D regression dataset for binning and polynomial-regression demonstrations.
 
 ## Concepts Covered
+
+### Chapter 3 — Preprocessing, Dimensionality Reduction, Clustering
 
 - [[StandardScaler]] — zero-mean, unit-variance feature scaling.
 - [[MinMaxScaler]] — rescales features into `[0, 1]`.
@@ -85,6 +107,20 @@ The chapter is a practitioner-oriented textbook exposition built around the [[sc
 - [[DBSCAN]] — density-based clustering with noise labels.
 - [[Adjusted Rand Index]] — permutation-invariant supervised clustering metric.
 - [[Silhouette Coefficient]] — unsupervised cluster-compactness metric.
+
+### Chapter 4 — Feature Engineering and Feature Selection
+
+- [[Categorical Variable]] — fixed-set-valued feature; distinction from [[Continuous Feature]].
+- [[Continuous Feature]] — real-valued feature where arithmetic is meaningful.
+- [[One-Hot Encoding]] — one binary column per category; the standard categorical encoding for linear models.
+- [[Binning]] — converting a continuous feature to a categorical bucket; piecewise-constant fits for linear models.
+- [[Interaction Feature]] — pairwise (or higher) products of features; lets linear models represent combinations.
+- [[Polynomial Features]] — all monomials up to degree `d`; via `sklearn.preprocessing.PolynomialFeatures`.
+- [[Polynomial Regression]] — linear regression on polynomially-expanded inputs.
+- [[Univariate Nonlinear Transformation]] — `log`, `sqrt`, `sin/cos`, etc., applied per feature to reshape distributions.
+- [[Univariate Feature Selection]] — F-test scoring per feature (`SelectKBest`, `SelectPercentile`).
+- [[Model-Based Feature Selection]] — `SelectFromModel` on tree or L1-linear importances.
+- [[Recursive Feature Elimination]] — iterative drop-and-refit (`RFE`, `RFECV`).
 
 ## Limitations and Gaps
 
