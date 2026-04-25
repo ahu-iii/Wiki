@@ -40,3 +40,7 @@ Google Brain is a deep-learning research team at Google. At the time of [[Attent
 
 - [[Transformer]]
 - [[tensor2tensor]]
+
+## Sources
+
+- [[Attention Is All You Need]]

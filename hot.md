@@ -1,12 +1,15 @@
 ---
 type: meta
 title: "Hot Cache"
-updated: 2026-04-22
+updated: 2026-04-24
 ---
 
 # Recent Context
 
 ## Last Updated
+2026-04-24 — Lint-fix pass cleared all 5 findings from [[lint-report-2026-04-24]]. Two actionable: appended `## Sources` footers to 13 Transformer-era entity pages + renamed `## Raw Source` → `## Sources` on [[Attention Is All You Need]] (HIGH #2); stripped `.md` suffix from 3 log.md wikilinks (LOW #1). Three verified stale at re-check (manifest, ByteNet, empty-sections). Trust aggregate unchanged (0 low / 48 medium / 25 high).
+
+## Previous
 2026-04-22 — Ingested Chapter 4 ("Representing Data and Engineering Features") of [[Introduction to Machine Learning with Python (Muller & Guido)]]. 18 new wiki pages created (2 topics, 11 concepts, 5 entities); the Chapter-3 source page from 2026-04-21 was extended to cover Chapter 4.
 
 ## Key Recent Facts

@@ -107,3 +107,5 @@ status: developing
 - Open-gap count combines `[!gap]` callouts and `(?)` uncertainty markers. Scoring thresholds: ≤2 open gaps adds 1 signal, 3+ adds 2.
 - Volatility signal fires only when `time-sensitive` and > 60 days old, or `evolving` and > 180 days old. Every current page is `stable` and recent, so volatility contributes 0 signals today.
 - Zero contradictions and zero supersessions wiki-wide — consequence of the additive Chapter-3 / Chapter-4 ingests on top of the 2026-04-17 Transformer ingest. No page drops into the `low` tier.
+- Refreshed 2026-04-24 19:45 after the lint-fix pass (see [[lint-report-2026-04-24]]). Aggregate unchanged: the pass added `## Sources` footers and stripped `.md` suffixes but introduced no new contradictions, supersessions, or gap markers. Trust tiers are driven by reliability signals, not by footer presence.
+- Refreshed 2026-04-24 19:45 after the lint-fix pass (see [[lint-report-2026-04-24]]). Aggregate unchanged: the pass added `## Sources` footers and stripped `.md` suffixes but introduced no new contradictions, supersessions, or gap markers. Trust tiers are driven by reliability signals, not by footer presence.

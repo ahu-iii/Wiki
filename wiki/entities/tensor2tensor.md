@@ -39,3 +39,7 @@ tensor2tensor is an open-source framework (developed primarily at [[Google Brain
 
 - [[Transformer]]
 - [[Google Brain]]
+
+## Sources
+
+- [[Attention Is All You Need]]

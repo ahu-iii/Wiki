@@ -39,3 +39,7 @@ Aidan N. Gomez is an equal-contribution co-author of [[Attention Is All You Need
 
 - [[Transformer]]
 - [[tensor2tensor]]
+
+## Sources
+
+- [[Attention Is All You Need]]

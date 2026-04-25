@@ -43,3 +43,7 @@ Jakob Uszkoreit is an equal-contribution co-author of [[Attention Is All You Nee
 
 - [[Transformer]]
 - [[Self-Attention]]
+
+## Sources
+
+- [[Attention Is All You Need]]

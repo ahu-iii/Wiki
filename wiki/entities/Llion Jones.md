@@ -39,3 +39,7 @@ Llion Jones is an equal-contribution co-author of [[Attention Is All You Need]].
 ## See Also
 
 - [[Transformer]]
+
+## Sources
+
+- [[Attention Is All You Need]]

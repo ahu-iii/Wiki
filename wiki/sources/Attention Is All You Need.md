@@ -86,6 +86,6 @@ The authors designed the [[Transformer]] architecture by stacking [[Multi-Head A
 > [!gap]
 > No analysis of attention-head specialization beyond qualitative inspection in the appendix.
 
-## Raw Source
+## Sources
 
-Source file: `raw/papers/attention-is-all-you-need-Paper.pdf`
+- Raw file: `raw/papers/attention-is-all-you-need-Paper.pdf` (this wiki page is the summary of that primary source).

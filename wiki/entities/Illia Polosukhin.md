@@ -39,3 +39,7 @@ Illia Polosukhin is an equal-contribution co-author of [[Attention Is All You Ne
 
 - [[Transformer]]
 - [[Attention Is All You Need]]
+
+## Sources
+
+- [[Attention Is All You Need]]

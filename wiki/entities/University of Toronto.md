@@ -31,3 +31,7 @@ The University of Toronto is a Canadian public research university with a strong
 ## See Also
 
 - [[Aidan N. Gomez]]
+
+## Sources
+
+- [[Attention Is All You Need]]

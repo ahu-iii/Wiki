@@ -40,3 +40,7 @@ Ashish Vaswani is the first (equal-contribution) author of [[Attention Is All Yo
 
 - [[Transformer]]
 - [[Attention Is All You Need]]
+
+## Sources
+
+- [[Attention Is All You Need]]

@@ -38,3 +38,7 @@ Google Research is Google's broad research division. In the author list of [[Att
 
 - [[Transformer]]
 - [[Google Brain]]
+
+## Sources
+
+- [[Attention Is All You Need]]
