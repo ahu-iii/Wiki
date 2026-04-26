@@ -30,7 +30,8 @@ Run every check. Group findings by severity, not by check type.
 | `thin-pages` | `status: seed` for more than 30 days | **LOW** | Suggest sources to develop the page |
 | `stale-meta` | `hot.md` or `overview.md` `updated` > 7 days | **MEDIUM** | Refresh from recent log entries |
 | `source-status` | Wiki page cites a source whose `raw/manifest.yaml` `status` ≠ `active` | **HIGH** | Add `> [!superseded]` / `> [!stale]` callout citing the manifest reason |
-| `cascade-supersession` | Wiki page cites another wiki page that contains a `> [!superseded]` callout for a claim it relies on | **MEDIUM** | Add a `> [!stale]` note linking to the supersession source |
+
+> **Deferred:** `cascade-supersession` (graph-walk for wiki pages that cite other pages bearing `[!superseded]` callouts). Build this check when the first `[!superseded]` callout is filed in the wiki — until then, it's noise. Tracked here so future-you doesn't re-design it.
 
 ---
 
@@ -99,18 +100,33 @@ This keeps the wiki actively growing instead of just decaying gracefully.
 
 ## Trust report (side-effect)
 
-After writing the lint report, refresh `wiki/meta/trust-report.md` — a per-page composite of the four reliability signals: contradictions, supersessions, gaps, and volatility/staleness. Format:
+After writing the lint report, refresh `wiki/meta/trust-report.md`. Keep the two axes separate — conflating factual risk with maintenance hints produces false confidence calibration (a page with three honest `[!gap]` callouts ranks worse than a page with three confident hallucinations).
+
+**Two axes, never collapsed into one score:**
+
+- *Factual risk* = unresolved `[!contradiction]` callouts + open `[!gap]` callouts + citations of sources whose `manifest.yaml` `status` ≠ `active`.
+- *Maintenance status* = volatility staleness only (`time-sensitive` >60d, `evolving` >180d). Hint, not risk.
+
+**Format:**
 
 ```markdown
 # Trust Report — YYYY-MM-DD
 
-| Page | Contradictions | Supersessions | Open Gaps | Volatility | Trust |
-|---|---|---|---|---|---|
-| [[Page X]] | 0 | 0 | 1 | stable | high |
-| [[Page Y]] | 1 | 0 | 0 | time-sensitive (45d) | medium |
-| [[Page Z]] | 0 | 2 | 3 | evolving (200d) | low |
+## Aggregate
+- Pages scanned: N
+- Pages with non-zero factual risk: M
+- Pages with maintenance staleness: K
 ```
 
-Trust score: `high` (no signals) / `medium` (1–2 signals) / `low` (3+ signals or any unresolved contradiction). Sort the table by trust ascending so the user sees the weakest pages first. This is computed, not authored — overwrite the file each lint run.
+If `M = 0` (no factual-risk signals anywhere in the corpus), stop here — a per-page table of all-zero rows is decorative noise. Append the per-page table only when at least one page has non-zero factual risk; sort by factual-risk descending so the weakest pages surface first.
 
-The trust report is the single composed view the user reads when asking "what's flaky in the wiki?"
+```markdown
+## Per-page (factual risk > 0)
+
+| Page | Contradictions | Supersessions | Open Gaps | Non-active sources | Maintenance |
+|---|---|---|---|---|---|
+| [[Page X]] | 1 | 0 | 0 | 0 | stable |
+| [[Page Z]] | 0 | 2 | 3 | 1 | evolving (200d) |
+```
+
+This is computed, not authored — overwrite the file each lint run.

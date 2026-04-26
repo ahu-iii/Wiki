@@ -82,14 +82,7 @@ Skip these and the wiki silently rots.
 
 ## Enforcement (harness layer)
 
-Two hooks convert the reliability primitives from norms into mechanism. Both live in `.claude/hooks/` and are wired in `.claude/settings.local.json`.
-
-| Hook | Type | What it does |
-|---|---|---|
-| `check-wiki-sources-footer.cjs` | `PreToolUse` (Write/Edit/MultiEdit) | Blocks writes to `wiki/{sources,entities,concepts,topics,comparisons,questions,synthesis}/*.md` whose proposed final body has real prose (>200 chars) but no `## Sources` heading. Stubs and template scaffolds pass through. |
-| `lint-summary.cjs` | `Stop` | Prints a one-line session-end count to stderr: scanned pages, missing footers, dead wikilinks, stale meta files. Cheap by design — full audit stays in the `wiki-lint` skill. |
-
-Source lifecycle is tracked in `raw/manifest.yaml` (per-source `status: active|retracted|superseded|errata`). Lint joins this against citations and surfaces wiki pages that depend on non-active sources. The composite per-page "trust score" view lives in `wiki/meta/trust-report.md`, refreshed as a lint side-effect.
+Two hooks in `.claude/hooks/` wire the reliability primitives to the harness: `check-wiki-sources-footer.cjs` (PreToolUse) blocks Write/Edit/MultiEdit on content pages without inline source citation + populated `## Sources` footer; `lint-summary.cjs` (Stop) prints a session-end one-line count. Source lifecycle: `raw/manifest.yaml`. Trust view: `wiki/meta/trust-report.md`. Details: `.claude/hooks/README.md`.
 
 ---
 
